@@ -208,7 +208,7 @@ async function showRandomParagraph() {
                     Only use English language. The paragraph should match the Staff Selection 
                     Commission (SSC) standard typing test difficulty level. Also, do not forget 
                     to strictly maintain the character length.`;
-    const baseURL = window.location.hostname === 'localhost'? 'http://localhost:3000': 'https://type4ssc.tiiny.site';
+    const baseURL = window.location.origin.includes('127.0.0.1') ? 'http://localhost:3000' : '';
     return fetch(`${baseURL}/api/generate-paragraph`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

@@ -1,1 +1,5 @@
+# Node.js modules
+node_modules/
+
+# Environment variables (sensitive API keys etc.)
 .env
