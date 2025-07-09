@@ -216,7 +216,7 @@ async function showRandomParagraph() {
     })
     .then(res => res.json())
     .then(data => {
-        document.getElementById('random-paragraph').textContent = data.paragraph||"The quick brown fox jumps over the lazy dog. This sentence contains every letter of the English alphabet and is often used as a typing test. It is a great way to practice your typing skills and improve your speed and accuracy. Remember to keep your fingers on the home row and use all your fingers while typing. Happy typing!";
+        document.getElementById('random-paragraph').textContent = data.paragraph;
     })
     .finally(() => {
         return 1;
