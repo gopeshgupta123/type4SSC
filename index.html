@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Enhancer</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./ChatGPT Image Jul 9, 2025, 07_45_50 AM.png" />
+
+    
+</head>
+<body >
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <h1>Typing Enhancer</h1>
+    <p style="text-align:center; max-width: 700px;">Welcome! Practice your typing skills with random paragraphs and track your speed and accuracy.</p>
+    <div id="time">
+        <select id="time-select">
+            <option value="3">3 seconds</option>
+            <option value="60">1 minute</option>
+            <option value="120">2 minutes</option>
+            <option value="300">5 minutes</option>
+            <option value="600">10 minutes</option>
+            <option value="900">15 minutes</option>
+            <option value="1800">30 minutes</option>
+            <option value="3600">1 hour</option>
+        </select>
+        <p>Time: <span id="time-display">0</span> seconds</p>
+        <button id="start-button">Start</button>
+    </div>
+    <div id="paragraphs" >
+<p id="random-paragraph"><em style="color: #808080;">You can practice your typing skills with this random paragraph. by clicking <b>start</b> button.</em></p>
+    </div>
+    
+    <div id="text-container">
+        <textarea placeholder="Start typing here..." disabled></textarea>
+    </div>
+    <div id="results" >
+        <p>Characters Typed: <span id="characters-typed">0</span></p>
+        <p>Time Taken: <span id="time-taken">0</span> s</p>
+        <!-- <p>Accuracy: <span id="accuracy">0</span>%</p> -->
+        <!-- <p>Speed: <span id="speed">0</span> word/min</p> -->
+
+
+        <p>Omission: <span id="omission">0</span></p>
+        <p>Substitution: <span id="substitution">0</span></p>
+        <p>Addition: <span id="addition">0</span></p>
+        <p>Repetition: <span id="repetition">0</span></p>
+        <p>Incomplete: <span id="incomplete">0</span></p>
+        <p>Total (Full): <span id="total-full">0</span></p>
+
+        <p>Spacing: <span id="spacing">0</span></p>
+        <p>Capitalization: <span id="capitalization">0</span></p>
+        <p>Punctuation: <span id="punctuation">0</span></p>
+        <p>Transposition: <span id="transposition">0</span></p>
+        <p>Paragraphic: <span id="paragraphic">0</span></p>
+        <p>Total (Half): <span id="total-half">0</span></p>
+
+
+        <P>Gross Typing Speed: <span id="gross-speed">0</span> WPM</P>
+        <P>Net Typing Speed: <span id="net-speed">0</span> WPM</P>
+        <p>Error%: <span id="error-percentage">0</span>%</p>
+        <p>Total words typed: <span id="total-words">0</span></p>
+        <!-- <p>Typed Keystrokes: <span id="typed-keystrokes">0</span></p> -->
+        <p>Total Given Keystrokes: <span id="total-given-keystrokes">0</span></p>
+        <!-- <p>Time Taken: <span id="time-taken">0</span> s</p> -->
+        <p>Backspace count: <span id="backspace-count">0</span></p>
+
+    </div>
+    <script src="./AIInde.js"></script>
+</body>
+</html>

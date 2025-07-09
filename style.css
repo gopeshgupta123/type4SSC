@@ -1,0 +1,276 @@
+/* * {
+    outline: 1px dashed red;
+} */
+:root {
+    --primary: #2d6cdf;
+    --background: #e0eafc;
+    --background-light: #f3f8ff;
+    --white: #fff;
+    --shadow: 0 2px 12px rgba(44, 62, 80, 0.06);
+    --shadow-light: 0 1px 4px rgba(44, 62, 80, 0.03);
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--background) 0%, #cfdef3 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+body::-webkit-scrollbar {
+    width: 0px;
+    
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    
+}
+
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.2); /* light overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none; /* hidden by default */
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ccc;
+  border-top: 6px solid #2d6cdf;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+h1 {
+    color: var(--primary);
+    margin-top: 40px;
+    font-size: calc(1.8rem + 2vw);
+    letter-spacing: 2px;
+    text-align: center;
+}
+p {
+    color: #444;
+}
+#time, #results {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 20px 30px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+}
+#time {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 20px 20px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row; /* 👈 change from column to row */
+    align-items: center;
+    justify-content: center; /* optional: center horizontally */
+    gap: 0px 50px; /* 👈 adds space between items */
+
+    width: 100%;
+    max-width: 700px;
+    flex-wrap: wrap; /* optional: allows wrapping on small screens */
+}
+
+#time select, #time button {
+    margin: 10px 0;
+}
+#time-select {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #bcd0ee;
+    font-size: 1rem;
+}
+#start-button {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+#start-button:hover, #start-button:focus {
+    background: #174ea6;
+}
+#text-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* #paragraphs {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    background: var(--background-light);
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
+} */
+/* #paragraphs {
+    width: 100%;
+    max-width: 700px;
+    height: 100vh; /* 100% of the viewport height 
+    overflow-y: auto; /* Enables vertical scrolling if needed 
+    margin: 0 auto 20px auto;
+    background: var(--background-light);
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
+} */
+
+#paragraphs {
+    width: 100%;
+    max-width: 700px;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    min-height: 200px; /* Optional: sets a baseline minimum height */
+    height:30vh; /* Take 30% of the screen height */
+    overflow-y: auto; /* Scroll if content overflows */
+    margin: 0 auto 20px auto;
+    background: var(--background-light);
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
+    box-sizing: border-box;
+    user-select: none; /* Prevents text selection */
+}
+
+
+#random-paragraph {
+    font-size: 1.15rem;
+    color: #222;
+    height:30vh; /* Take 30% of the screen height */
+    /*overflow-y: auto; /* Scroll if content overflows */
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    word-break: break-word;
+    white-space: normal; /* IMPORTANT: Allows wrapping */
+}
+#paragraphs::-webkit-scrollbar {
+    width: 8px;
+    scroll-behavior: smooth;
+    
+}
+#paragraphs::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    
+}
+
+.placeholder-paragraph {
+    color: #000000;
+    font-style: italic;
+}
+#text-container h2 {
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 700px;
+    min-height: 120px;
+    max-height: 120px;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1.5px solid #bcd0ee;
+    font-size: 1.1rem;
+    padding: 18px;
+    background: #f7faff;
+    resize: vertical;
+    transition: border 0.2s;
+    margin-top: 8px;
+    box-sizing: border-box;
+
+}
+textarea:focus {
+    border: 2px solid var(--primary);
+    outline: none;
+    background: #fff;
+}
+textarea::-webkit-scrollbar {
+    width: 8px;
+    
+}
+textarea::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    
+}
+
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    text-align: center;
+    /* display:none; Initially hidden */
+    
+}
+#results p {
+    font-size: 1.08rem;
+    color: var(--primary);
+    margin: 0;
+    background: #e9f0fb;
+    border-radius: 8px;
+    padding: 12px 0;
+    box-shadow: var(--shadow-light);
+}
+@media (max-width: 800px) {
+    #text-container, #paragraphs, #results, #time {
+        max-width: 85vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+}
+@media (max-width: 500px) {
+    h1 { font-size: 1.3rem; }
+    #results p { font-size: 1rem; }
+    #paragraphs, #text-container, #time, #results { padding: 10px; }
+    textarea { font-size: 1rem; padding: 10px; }
+}
+@media (max-width: 400px) {
+    #time, #results, #paragraphs, #text-container {
+        padding: 4vw 2vw;
+    }
+    textarea {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+}
